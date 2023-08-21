@@ -1,0 +1,10 @@
+
+job1:
+  script:
+    - yarn 
+    - yarn build
+    - docker -t gitlab.casita.monster/gabriele/smarmelbot .
+    - docker tag gitlab.casita.monster/gabriele/smarmelbot gitlab.casita.monster/gabriele/smarmelbot:latest
+    - docker push gitlab.casita.monster/gabriele/smarmelbot:latest
+  only:
+    - main
